@@ -45,8 +45,12 @@ def handle_file(in_file, out_file):
 
         match = RUN_PATTERN.match(line)
         if match:
-            result = subprocess.run(match.group(
-                'cmd').replace('\\\\', '\\'), shell=True, text=True, check=True, stdout=subprocess.PIPE, env=env)
+            result = subprocess.run(match.group('cmd').replace('\\\\', '\\'),
+                                    shell=True,
+                                    text=True,
+                                    check=True,
+                                    stdout=subprocess.PIPE,
+                                    env=env, cwd=os.path.dirname(os.path.abspath(in_file)))
             env[match.group('var')] = result.stdout
             out_file_lines.append(line)
             continue

@@ -4,10 +4,10 @@ Minimalistic markdown placeholders filled by shell stdout
 
 ### Input Markdown file
 
-<!--- #RUN OUTPUT echo -e "\`\`\`\n$(cat example.md)\n\`\`\`" -->
+<!--- #RUN OUTPUT echo -e "\`\`\`markdown\n$(cat example.md)\n\`\`\`" -->
 
 <!--- #ECHO OUTPUT { -->
-```
+```markdown
 # Files
 
 <!--- #RUN OUTPUT ls | sed -e 's/^/\* /g' -->
@@ -22,10 +22,10 @@ Minimalistic markdown placeholders filled by shell stdout
 
 ### Generated Markdown file
 
-<!--- #RUN OUTPUT echo -e "\`\`\`\n$(cat example_gen.md)\n\`\`\`" -->
+<!--- #RUN OUTPUT echo -e "\`\`\`markdown\n$(cat example_gen.md)\n\`\`\`" -->
 
 <!--- #ECHO OUTPUT { -->
-```
+```markdown
 # Files
 
 <!--- #RUN OUTPUT ls | sed -e 's/^/\- /g' -->
